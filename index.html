@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=5.0, user-scalable=no" />
+    <meta name="robots" content="nofollow" />
+    <link href="./static/index.css" rel="stylesheet">
+    <title>ADDRESS.IR</title>
+    <meta name="title" content="ADDRESS">
+</head>
+
+<body dir="rtl">
+    <header>
+        <img src="./static/address.svg" alt="address" width="219" height="45" />
+    </header>
+    <section class="catalog-container">
+        {{range .CatalogList}}
+        <a href="https://address.ir/catalog/{{.CatalogUUID}}">
+            <div class="image-card-container">
+                <div class="saloon-image">
+                    <img src="https://address.ir{{.SaloonsImg}}" alt="saloon" width="400" height="400" />
+                </div>
+                <img src="https://address.ir{{.KitchensImg}}" alt="kitchens" width="198" height="198" />
+                <img src="https://address.ir{{.RoomsImg}}" alt="rooms" width="198" height="198" />
+                <div class="catalog-data-container">
+                    {{ if (eq .CatalogType "sale")}}
+                        Total Price : {{.TotalPrice}}T
+                    {{ else }}
+                        Mortgage Amount : {{.MortgageAmount}}T
+                        <br />
+                        Monthly Rent : {{.MonthlyRent}}T
+                    {{ end }}
+                </div>
+            </div>
+            <span class="catalog-type">{{.CatalogType}}</span>
+            <span class="district-name">{{.DistrictName}}</span>
+        </a>
+        {{end}} 
+    </section>
+</body>
+
+</html>
