@@ -5,6 +5,6 @@ this is a sample dynamic page to fetch data from address.ir api and show with Go
 
 `cd explore-ssr-go-master`
 
-`go run index.go`
+`go run ssr.go`
 
 now you can see this page on http://localhost:7426
